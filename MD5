@@ -1,6 +1,6 @@
-5e5dbf862142355d17259cb4ffc76e1a *DESCRIPTION
+3befb72e428c3d27cd35f53b29e47ae6 *DESCRIPTION
 bb89b92893c85f4e13b3b4f66d03baa3 *NAMESPACE
-bf6f056a1035566349ad807cb45e2d89 *NEWS.md
+5eb1d4f2c15a1b7a247d13db12be6b5e *NEWS.md
 e934db1857832169409c43b62cde5d3e *R/ArrayParameter-proto.R
 d45f44f7fcf520219a31e62d04f2e641 *R/Collection-proto.R
 316a5ff7c158f19dcbfc796639af9b67 *R/Constraint-proto.R
@@ -78,7 +78,7 @@ f4590b0089d90ac606ae2625a5920c22 *R/star_phylogeny.R
 e3aa1bb48a55c3f6b629edb5a2ba0f48 *R/waiver.R
 9c227c5f46bb298d2f88074249a8e277 *R/weights.R
 06f411de82e1bcb1944e211cbe635701 *R/zzz.R
-31673f4cd372af8cfd0a55e3f5e5203c *README.md
+3ac51a961813cbc5381822e0e39c1faa *README.md
 8c8a4a27567df112187df3a370e66ab6 *build/vignette.rds
 c953d9eeffa4c466b40cfdc221e29cb3 *data/sim_actions.rda
 b384b5b2b641c27e478b60a5bbf326fc *data/sim_features.rda
@@ -86,7 +86,7 @@ eb5f4cbd215c509817e2d798a8cf4df9 *data/sim_projects.rda
 adcad2012e840710509417a91a8c314e *data/sim_tree.rda
 f8662148df74a0f31bb0c33ee0d0e530 *inst/CITATION
 71273919aa116d42e154ae6d05fcfe48 *inst/doc/oppr.Rmd
-6d9bae4adab1273fb047006d9f722ae9 *inst/doc/oppr.html
+5d577a7cd9a4ed3e552fa4bf4be9e1d1 *inst/doc/oppr.html
 9500e8bf11586bd0377b092c92c1d28b *inst/extdata/simulate_data.R
 3518d35c0fcbc1908320d3c2bfae1e88 *man/ArrayParameter-class.Rd
 69662bc6470c38700487f2c8dcf7a8fb *man/Collection-class.Rd
@@ -167,7 +167,7 @@ ee6f07a229114e5b105c2cf115abb4b5 *man/targets.Rd
 90bc8a7cce558162c1e4a4ffefca7c9d *man/tee.Rd
 7147838a3e8ae4c32e1c4cf0855ff8b5 *man/tibble-methods.Rd
 5fffc69e1dc54a46a527e0e97fe02a72 *man/weights.Rd
-fc7c598ef887ec8f6ed936b24f922020 *src/Makevars
+48c249c043ec4b5780bba520d4484267 *src/Makevars
 48c249c043ec4b5780bba520d4484267 *src/Makevars.win
 232c404443a7f7672eaae4a8ceb138ab *src/RcppExports.cpp
 4fb931c41d108ce4c41542717b2887aa *src/functions.cpp
