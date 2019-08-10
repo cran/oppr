@@ -1,4 +1,13 @@
-# oppr 0.0.3
+# oppr 0.0.4 (released)
+
+- CRAN release.
+
+# oppr 0.0.3.1
+
+- Fix typo.
+- Fix broken links to Gurobi academic licenses.
+
+# oppr 0.0.3 (released)
 
 - CRAN release.
 
@@ -6,7 +15,7 @@
 
 - Retain debugging symbols to conform with CRAN policies.
 
-# oppr 0.0.2
+# oppr 0.0.2 (released)
 
 - CRAN release.
 
@@ -15,7 +24,7 @@
 - Fix address sanitizer issues causing CRAN checks to fail.
 - Tests successfully complete when the _shiny_ R package is not installed.
 
-# oppr 0.0.1
+# oppr 0.0.1 (released)
 
 - CRAN release.
 

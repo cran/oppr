@@ -1,6 +1,6 @@
-3befb72e428c3d27cd35f53b29e47ae6 *DESCRIPTION
+ef165bd6000793ab973997d856ed2848 *DESCRIPTION
 bb89b92893c85f4e13b3b4f66d03baa3 *NAMESPACE
-5eb1d4f2c15a1b7a247d13db12be6b5e *NEWS.md
+20205eb10298a44049ae5afdb855450c *NEWS.md
 e934db1857832169409c43b62cde5d3e *R/ArrayParameter-proto.R
 d45f44f7fcf520219a31e62d04f2e641 *R/Collection-proto.R
 316a5ff7c158f19dcbfc796639af9b67 *R/Constraint-proto.R
@@ -24,7 +24,7 @@ bfe7d992af73ffbe41209372df06d3f6 *R/action_names.R
 c9351e759df83db1e881cbba6ecbddd7 *R/add_binary_decisions.R
 6d7a7bda72824365da4c3624975c5b22 *R/add_default_solver.R
 9686761168f7843e0ab4f66a32b7d5ff *R/add_feature_weights.R
-11c6c941481b8d35a8a719e6a0b89742 *R/add_gurobi_solver.R
+d7b1938bc774ee3c3c947aa48c66256c *R/add_gurobi_solver.R
 9dc0b9d915680fb2af618006221eb446 *R/add_heuristic_solver.R
 337353b86860c0ec2a0888a32692bda8 *R/add_locked_in_constraints.R
 f30b507d4a7db4404f12c540ad8af794 *R/add_locked_out_constraints.R
@@ -53,7 +53,7 @@ dbe3ccf8945d35bb56f1e015f5792e5b *R/magrittr-operators.R
 68cd4d08e8f8a9d5aac463a7f3a0c847 *R/number_of_features.R
 cd42e7f5931b325a15d7a41b0aa5c73d *R/number_of_projects.R
 cdaeaa0850502e1fe7a3a7401facdad0 *R/objectives.R
-5b279cf79cd3fdc12822d0101a0d8f60 *R/package.R
+23d78aac35708024028cc1c239a3a462 *R/package.R
 f2c2c59c358edcfd5f02193814049011 *R/parameters.R
 23b79c2503c98814ad35b55de0a4f9b5 *R/plot.R
 ea91120a18e8ca9bc77bd51b85434f07 *R/plot_feature_persistence.R
@@ -78,15 +78,15 @@ f4590b0089d90ac606ae2625a5920c22 *R/star_phylogeny.R
 e3aa1bb48a55c3f6b629edb5a2ba0f48 *R/waiver.R
 9c227c5f46bb298d2f88074249a8e277 *R/weights.R
 06f411de82e1bcb1944e211cbe635701 *R/zzz.R
-3ac51a961813cbc5381822e0e39c1faa *README.md
-8c8a4a27567df112187df3a370e66ab6 *build/vignette.rds
+1e5e7023e1a16bc3b9ee3a9a5731c2ed *README.md
+db2731940d1a30c0027ab81bfa01a4d7 *build/vignette.rds
 c953d9eeffa4c466b40cfdc221e29cb3 *data/sim_actions.rda
 b384b5b2b641c27e478b60a5bbf326fc *data/sim_features.rda
 eb5f4cbd215c509817e2d798a8cf4df9 *data/sim_projects.rda
 adcad2012e840710509417a91a8c314e *data/sim_tree.rda
-f8662148df74a0f31bb0c33ee0d0e530 *inst/CITATION
+4ff0b8f0a631b8618fb051c20a3ec0fe *inst/CITATION
 71273919aa116d42e154ae6d05fcfe48 *inst/doc/oppr.Rmd
-5d577a7cd9a4ed3e552fa4bf4be9e1d1 *inst/doc/oppr.html
+11ed2f4dc92e209cd0ec89b596767353 *inst/doc/oppr.html
 9500e8bf11586bd0377b092c92c1d28b *inst/extdata/simulate_data.R
 3518d35c0fcbc1908320d3c2bfae1e88 *man/ArrayParameter-class.Rd
 69662bc6470c38700487f2c8dcf7a8fb *man/Collection-class.Rd
@@ -109,7 +109,7 @@ df19571d3fc64c0f83da0caf87873245 *man/Target-class.Rd
 ebbe57625acea04d7e5ce0a7930f19b2 *man/add_binary_decisions.Rd
 39a124bb7f6ddc25d23b5d85366c947c *man/add_default_solver.Rd
 f94a08e0cc17fe986de8443a539b72fc *man/add_feature_weights.Rd
-835efcb2d8ae88949211b4b85efd05b0 *man/add_gurobi_solver.Rd
+dfeb7f2f88930705c6f79438bf4a80c3 *man/add_gurobi_solver.Rd
 59c3ecff7fc6a987d6dd7dee83590a08 *man/add_heuristic_solver.Rd
 def2c8f4ec1495b6d11ac50c1f934c5b *man/add_locked_in_constraints.Rd
 8ea3729d6dedd5b1cbce457c0c5eedb2 *man/add_locked_out_constraints.Rd
@@ -132,7 +132,7 @@ ee15ce5b49a426b86fac214e88bcb703 *man/compile.Rd
 580dcfcfefe760b9529cf8ab166deef7 *man/constraints.Rd
 8baca6f2c48ec1dd7756c22f2f43e203 *man/decisions.Rd
 6bd1635c0c654ed1afd181a7026204ea *man/feature_names.Rd
-ed417ec4f27ddaeaf0d3cc5b184b6661 *man/figures/README-readme-plot-1.png
+436c3c8f565178eb0bbf141b78c85816 *man/figures/README-readme-plot-1.png
 660d698c94e495983c256d2ba6bac913 *man/is.Rd
 6b775ff7ad4948eeffbacc587f164890 *man/matrix_parameters.Rd
 934b0b18c9501e7dae024aee8452ed07 *man/misc_parameter.Rd
@@ -143,7 +143,7 @@ ee0f34c7891af6f66a1513b80e318783 *man/new_id.Rd
 591f66ddd0668e9fdaee0b717fc040ea *man/number_of_features.Rd
 c4a3fa9d07532f7d742c339586a96fc7 *man/number_of_projects.Rd
 b5bc1ab659226e2180039da44b9da6d0 *man/objectives.Rd
-8a10500e55f4408d10f70bdc801a15e1 *man/oppr.Rd
+43eb211b330628c729c34bd13be74ac2 *man/oppr.Rd
 f13780f13d07782154270e607e838a00 *man/parameters.Rd
 fa9243ed0688f5b3283e4a84cb115413 *man/pipe.Rd
 c12cba24d0e229b49526201462fb095a *man/plot.ProjectProblem.Rd

@@ -1,6 +1,6 @@
 Package: oppr
 Type: Package
-Version: 0.0.3
+Version: 0.0.4
 Title: Optimal Project Prioritization
 Description: A decision support tool for prioritizing conservation projects.
     Prioritizations can be developed by maximizing expected feature richness,
@@ -20,7 +20,7 @@ Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
                email='mail@richard-schuster.com', role = c('aut')),
              person(c('Matthew'), 'Strimas-Mackey',
                email='mstrimas@gmail.com', role = c('aut')),
-             person(c('Joeseph'), 'Bennett',
+             person(c('Joseph'), 'Bennett',
                email='joseph.bennett@carleton.ca', role = c('aut')))
 Imports: utils, methods, stats, Matrix, magrittr (>= 1.5), uuid (>=
         0.1.2), proto (>= 1.0.0), cli (>= 1.0.1), assertthat (>=
@@ -73,11 +73,11 @@ Collate: 'internal.R' 'pproto.R' 'Parameter-proto.R'
         'show.R' 'simulate_ppp_data.R' 'simulate_ptm_data.R' 'solve.R'
         'solvers.R' 'targets.R' 'weights.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2019-04-10 19:29:28 UTC; jeff
+Packaged: 2019-08-10 14:41:05 UTC; jeff
 Author: Jeffrey O Hanson [aut, cre],
   Richard Schuster [aut],
   Matthew Strimas-Mackey [aut],
-  Joeseph Bennett [aut]
+  Joseph Bennett [aut]
 Maintainer: Jeffrey O Hanson <jeffrey.hanson@uqconnect.edu.au>
 Repository: CRAN
-Date/Publication: 2019-04-10 21:42:59 UTC
+Date/Publication: 2019-08-10 22:30:07 UTC
