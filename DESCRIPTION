@@ -1,6 +1,6 @@
 Package: oppr
 Type: Package
-Version: 0.0.4
+Version: 1.0.0
 Title: Optimal Project Prioritization
 Description: A decision support tool for prioritizing conservation projects.
     Prioritizations can be developed by maximizing expected feature richness,
@@ -10,10 +10,11 @@ Description: A decision support tool for prioritizing conservation projects.
     feature weights can also be specified to further customize prioritizations.
     After defining a project prioritization problem, solutions can be obtained
     using exact algorithms, heuristic algorithms, or random processes. In
-    particular, it is recommended to install the 'Gurobi' optimizer  (available
+    particular, it is recommended to install the 'Gurobi' optimizer (available
     from <https://www.gurobi.com>) because it can identify optimal solutions
     very quickly. Finally, methods are provided for comparing different
-    prioritizations and evaluating their benefits.
+    prioritizations and evaluating their benefits. For more information, see
+    Hanson et al. (2019) <doi:10.1111/2041-210X.13264>.
 Authors@R: c(person(c('Jeffrey', 'O'), 'Hanson',
                email='jeffrey.hanson@uqconnect.edu.au', role = c('aut', 'cre')),
              person(c('Richard'), 'Schuster',
@@ -73,11 +74,11 @@ Collate: 'internal.R' 'pproto.R' 'Parameter-proto.R'
         'show.R' 'simulate_ppp_data.R' 'simulate_ptm_data.R' 'solve.R'
         'solvers.R' 'targets.R' 'weights.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2019-08-10 14:41:05 UTC; jeff
+Packaged: 2020-02-07 06:53:58 UTC; jeff
 Author: Jeffrey O Hanson [aut, cre],
   Richard Schuster [aut],
   Matthew Strimas-Mackey [aut],
   Joseph Bennett [aut]
 Maintainer: Jeffrey O Hanson <jeffrey.hanson@uqconnect.edu.au>
 Repository: CRAN
-Date/Publication: 2019-08-10 22:30:07 UTC
+Date/Publication: 2020-02-07 12:10:07 UTC
