@@ -1,6 +1,6 @@
-dab1450b6f0625720b4392a5c2fd3d0a *DESCRIPTION
+e8cb8c837b311175d75eb9f2bcc676ce *DESCRIPTION
 bb89b92893c85f4e13b3b4f66d03baa3 *NAMESPACE
-13b37fa31d6db377246954442b229b8f *NEWS.md
+5a70db7a3d618aa123c4c1e79178321a *NEWS.md
 e934db1857832169409c43b62cde5d3e *R/ArrayParameter-proto.R
 d45f44f7fcf520219a31e62d04f2e641 *R/Collection-proto.R
 316a5ff7c158f19dcbfc796639af9b67 *R/Constraint-proto.R
@@ -62,7 +62,7 @@ a7484df1fd9c25b3715104b73009f597 *R/pproto.R
 a8189ed171ec5a5bb4a4f90649b70228 *R/predefined_optimization_problem.R
 2dc9800415eba82f28ac271ce6e1a226 *R/print.R
 9a342e21e9f8a1fce41f66584d9359b0 *R/problem.R
-4bf9ceec308bc244b42146d12de7f031 *R/project_cost_effectiveness.R
+f2b0c577a5a9f9580ce1047d1fa69302 *R/project_cost_effectiveness.R
 4f39edc3ee852dae3afdb025dfd00180 *R/project_names.R
 11f251ea212deffad11f46a207394c6f *R/rake_phylogeny.R
 c78a3bc48638b9992ff53e3f7baf0576 *R/replacement_costs.R
@@ -78,7 +78,7 @@ f4590b0089d90ac606ae2625a5920c22 *R/star_phylogeny.R
 e3aa1bb48a55c3f6b629edb5a2ba0f48 *R/waiver.R
 9c227c5f46bb298d2f88074249a8e277 *R/weights.R
 06f411de82e1bcb1944e211cbe635701 *R/zzz.R
-d99c705abade6f7e7905bd9e981beb21 *README.md
+d35aeb7e1813eaa04332f3ca53982e6f *README.md
 db2731940d1a30c0027ab81bfa01a4d7 *build/vignette.rds
 c953d9eeffa4c466b40cfdc221e29cb3 *data/sim_actions.rda
 b384b5b2b641c27e478b60a5bbf326fc *data/sim_features.rda
@@ -86,7 +86,7 @@ eb5f4cbd215c509817e2d798a8cf4df9 *data/sim_projects.rda
 adcad2012e840710509417a91a8c314e *data/sim_tree.rda
 1473325a696dc8b739fcc215c0237137 *inst/CITATION
 71273919aa116d42e154ae6d05fcfe48 *inst/doc/oppr.Rmd
-5a37c1e5b955f6fda32ef46c48faa939 *inst/doc/oppr.html
+4493de79023248212b40e6fd1de0dc43 *inst/doc/oppr.html
 9500e8bf11586bd0377b092c92c1d28b *inst/extdata/simulate_data.R
 3518d35c0fcbc1908320d3c2bfae1e88 *man/ArrayParameter-class.Rd
 69662bc6470c38700487f2c8dcf7a8fb *man/Collection-class.Rd
