@@ -3,14 +3,9 @@
 \docType{package}
 \name{oppr}
 \alias{oppr}
-\alias{oppr-package}
-\title{\pkg{oppr}: Optimal Project Prioritization}
+\title{oppr: Optimal Project Prioritization}
 \description{
-\pkg{oppr}: Optimal Project Prioritization
-}
-\section{Description}{
-
-  The \pkg{oppr} \emph{R} package a decision support tool for prioritizing
+The \pkg{oppr} \emph{R} package a decision support tool for prioritizing
   conservation projects. Prioritizations can be developed by maximizing
   expected feature richness, expected
   phylogenetic diversity, the number of features that meet persistence
@@ -26,7 +21,6 @@
   are provided for comparing different prioritizations and evaluating their
   benefits.
 }
-
 \section{Installation}{
 
 To make the most of this package, the \href{https://bioconductor.org/packages/release/bioc/html/ggtree.html}{\pkg{ggtree}} and
