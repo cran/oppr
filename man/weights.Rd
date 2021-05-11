@@ -12,12 +12,12 @@ require weights will throw a warning and the weights will be ignored.
 \details{
 Currently, only one function can be used to specify weights:
 
-  \describe{
+\describe{
 
-  \item{\code{\link{add_feature_weights}}}{
-    Set feature weights for a project prioritization \code{\link{problem}}.}
+\item{\code{\link[=add_feature_weights]{add_feature_weights()}}}{
+Set feature weights for a project prioritization \code{\link[=problem]{problem()}}.}
 
-  }
+}
 }
 \examples{
 # load data
@@ -31,7 +31,7 @@ p <- problem(sim_projects, sim_actions, sim_features,
      add_feature_weights("weight") \%>\%
      add_binary_decisions()
 
-\donttest{
+\dontrun{
 # solve problem
 s <- solve(p)
 
@@ -43,7 +43,7 @@ plot(p, s)
 }
 }
 \seealso{
-\code{\link{constraints}}, \code{\link{decisions}},
- \code{\link{objectives}}, \code{\link{problem}},
- \code{\link{solvers}}, \code{\link{targets}}.
+\link{constraints}, \link{decisions},
+\link{objectives}, \code{\link[=problem]{problem()}},
+\link{solvers}, \link{targets}.
 }

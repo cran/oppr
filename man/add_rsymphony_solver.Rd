@@ -7,24 +7,21 @@
 add_rsymphony_solver(
   x,
   gap = 0,
-  time_limit = -1,
-  first_feasible = 0,
+  time_limit = .Machine$integer.max,
+  first_feasible = FALSE,
   verbose = TRUE
 )
 }
 \arguments{
-\item{x}{\code{\link{ProjectProblem-class}} object.}
+\item{x}{\linkS4class{ProjectProblem} object.}
 
-\item{gap}{\code{numeric} gap to optimality. This gap is relative when
-solving problems using \pkg{gurobi}, and will cause the optimizer to
-terminate when the difference between the upper and lower objective
-function bounds is less than the gap times the upper bound. For example, a
-value of 0.01 will result in the optimizer stopping when the difference
-between the bounds is 1 percent of the upper bound. For
-other solvers, this is the absolute gap, so if the optimal value for
-a maximization problem is 10, a gap of 0.01 means that a solution between
-10 and 10.01 is required. Defaults to 0, so that optimal solutions will be
-returned.}
+\item{gap}{\code{numeric} gap to optimality. This gap is relative
+and expresses the acceptable deviance from the optimal objective.
+For example, a value of 0.01 will result in the solver stopping when
+it has found a solution within 1\% of optimality.
+Additionally, a value of 0 will result in the solver stopping
+when it has found an optimal solution.
+The default value is 0.1 (i.e. 10\% from optimality).}
 
 \item{time_limit}{\code{numeric} time limit in seconds to run the optimizer.
 The solver will return the current best solution when this time limit is
@@ -42,26 +39,26 @@ Defaults to \code{FALSE}.}
 optimization problems?}
 }
 \value{
-\code{\link{ProjectProblem-class}} object with the solver added
-  to it.
+\linkS4class{ProjectProblem} object with the solver added
+to it.
 }
 \description{
 Specify that the \emph{SYMPHONY} software should be used to solve a
-project prioritization \code{\link{problem}} using the \pkg{Rsymphony}
+project prioritization \code{\link[=problem]{problem()}} using the \pkg{Rsymphony}
 package. This function can also be used to customize the behavior of the
 solver. It requires the \pkg{Rsymphony} package.
 }
 \details{
 \href{https://projects.coin-or.org/SYMPHONY}{\emph{SYMPHONY}} is an
-  open-source integer programming solver that is part of the Computational
-  Infrastructure for Operations Research (COIN-OR) project, an initiative
-  to promote development of open-source tools for operations research (a
-  field that includes linear programming). The \pkg{Rsymphony} package
-  provides an interface to COIN-OR and is available on \emph{CRAN}.
-  This solver uses the \pkg{Rsymphony} package to solve problems.
+open-source integer programming solver that is part of the Computational
+Infrastructure for Operations Research (COIN-OR) project, an initiative
+to promote development of open-source tools for operations research (a
+field that includes linear programming). The \pkg{Rsymphony} package
+provides an interface to COIN-OR and is available on \emph{CRAN}.
+This solver uses the \pkg{Rsymphony} package to solve problems.
 }
 \examples{
-\donttest{
+\dontrun{
 # load data
 data(sim_projects, sim_features, sim_actions)
 
@@ -86,5 +83,5 @@ plot(p, s)
 }
 }
 \seealso{
-\code{\link{solvers}}.
+\link{solvers}.
 }

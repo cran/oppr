@@ -3,95 +3,92 @@ NULL
 
 #' Add a \pkg{Gurobi} solver
 #'
-#' Specify that the \emph{Gurobi} software should be used to solve a
-#' project prioritization \code{\link{problem}}. This function can also be
+#' Specify that the *Gurobi* software should be used to solve a
+#' project prioritization [problem()]. This function can also be
 #' used to customize the behavior of the solver. In addition to the
-#' \emph{Gurobi} software suite, it also requires the \pkg{gurobi} package to
+#' *Gurobi* software suite, it also requires the \pkg{gurobi} package to
 #' be installed.
 #'
-#' @param x \code{\link{ProjectProblem-class}} object.
+#' @param x [ProjectProblem-class] object.
 #'
-#' @param gap \code{numeric} gap to optimality. This gap is relative when
-#'   solving problems using \pkg{gurobi}, and will cause the optimizer to
-#'   terminate when the difference between the upper and lower objective
-#'   function bounds is less than the gap times the upper bound. For example, a
-#'   value of 0.01 will result in the optimizer stopping when the difference
-#'   between the bounds is 1 percent of the upper bound. For
-#'   other solvers, this is the absolute gap, so if the optimal value for
-#'   a maximization problem is 10, a gap of 0.01 means that a solution between
-#'   10 and 10.01 is required. Defaults to 0, so that optimal solutions will be
-#'   returned.
+#' @param gap `numeric` gap to optimality. This gap is relative
+#'   and expresses the acceptable deviance from the optimal objective.
+#'   For example, a value of 0.01 will result in the solver stopping when
+#'   it has found a solution within 1% of optimality.
+#'   Additionally, a value of 0 will result in the solver stopping
+#'   when it has found an optimal solution.
+#'   The default value is 0.1 (i.e. 10% from optimality).
 #'
-#' @param number_solutions \code{integer} number of solutions desired.
+#' @param number_solutions `integer` number of solutions desired.
 #'   Defaults to 1. Note that the number of returned solutions can sometimes
-#'   be less than the argument to \code{number_solutions} depending on the
-#'   argument to \code{solution_pool_method}, for example if 100
+#'   be less than the argument to `number_solutions` depending on the
+#'   argument to `solution_pool_method`, for example if 100
 #'   solutions are requested but only 10 unique solutions exist, then only 10
 #'   solutions will be returned.
 #'
-#' @param solution_pool_method \code{numeric} search method identifier that
+#' @param solution_pool_method `numeric` search method identifier that
 #'   determines how multiple solutions should be generated. Available search
-#'   modes for generating a portfolio of solutions include: \code{0}
+#'   modes for generating a portfolio of solutions include: `0`
 #'   recording all solutions identified whilst trying to find
-#'   a solution that is within the specified optimality gap, \code{1} finding
+#'   a solution that is within the specified optimality gap, `1` finding
 #'   one solution within the optimality gap and a number of additional
 #'   solutions that are of any level of quality (such that the total number of
-#'   solutions is equal to \code{number_solutions}), and \code{2} finding a
+#'   solutions is equal to `number_solutions`), and `2` finding a
 #'   specified number of solutions that are nearest to optimality. For more
-#'   information, see the \emph{Gurobi} manual (i.e. \url{http://www.gurobi.com/documentation/8.0/refman/poolsearchmode.html#parameter:PoolSearchMode}). Defaults to 2.
+#'   information, see the *Gurobi* manual (i.e. <https://www.gurobi.com/documentation/8.0/refman/poolsearchmode.html#parameter:PoolSearchMode>). Defaults to 2.
 #'
-#' @param time_limit \code{numeric} time limit in seconds to run the optimizer.
+#' @param time_limit `numeric` time limit in seconds to run the optimizer.
 #'   The solver will return the current best solution when this time limit is
 #'   exceeded.
 #'
-#' @param presolve \code{integer} number indicating how intensively the
+#' @param presolve `integer` number indicating how intensively the
 #'   solver should try to simplify the problem before solving it. The default
 #'   value of 2 indicates to that the solver should be very aggressive in
 #'   trying to simplify the problem.
 #'
-#' @param threads \code{integer} number of threads to use for the
+#' @param threads `integer` number of threads to use for the
 #'   optimization algorithm. The default value of 1 will result in only
 #'   one thread being used.
 #'
-#' @param first_feasible \code{logical} should the first feasible solution be
-#'   be returned? If \code{first_feasible} is set to \code{TRUE}, the solver
+#' @param first_feasible `logical` should the first feasible solution be
+#'   be returned? If `first_feasible` is set to `TRUE`, the solver
 #'   will return the first solution it encounters that meets all the
 #'   constraints, regardless of solution quality. Note that the first feasible
 #'   solution is not an arbitrary solution, rather it is derived from the
 #'   relaxed solution, and is therefore often reasonably close to optimality.
-#'   Defaults to \code{FALSE}.
+#'   Defaults to `FALSE`.
 #'
-#' @param verbose \code{logical} should information be printed while solving
+#' @param verbose `logical` should information be printed while solving
 #'  optimization problems?
 #'
-#' @details \href{http://gurobi.com}{\emph{Gurobi}} is a
+#' @details [*Gurobi*](https://www.gurobi.com) is a
 #'   state-of-the-art commercial optimization software with an R package
 #'   interface. It is by far the fastest of the solvers supported by this
 #'   package, however, it is also the only solver that is not freely
 #'   available. That said, licenses are available to academics at no cost. The
-#'   \pkg{gurobi} package is distributed with the \emph{Gurobi} software suite.
+#'   \pkg{gurobi} package is distributed with the *Gurobi* software suite.
 #'   This solver uses the \pkg{gurobi} package to solve problems.
 #'
 #'   To install the \pkg{gurobi} package, the
-#'   \href{https://www.gurobi.com}{Gurobi} optimization suite will first need to
-#'   be installed (see instructions for \href{http://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html}{Linux},
-#'   \href{http://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html}{Mac OSX}, and
-#'   \href{http://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html}{Windows} operating systems). Although
-#'   \href{https://www.gurobi.com}{Gurobi} is a commercial software, academics
+#'   [Gurobi](https://www.gurobi.com) optimization suite will first need to
+#'   be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html),
+#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html), and
+#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html) operating systems). Although
+#'   [Gurobi](https://www.gurobi.com) is a commercial software, academics
 #'   can obtain a
-#'   \href{https://www.gurobi.com/downloads/end-user-license-agreement-academic/}{special license for no cost}. After installing the
-#'   \href{https://www.gurobi.com}{Gurobi} optimization suite, the \pkg{gurobi}
-#'   package can then be installed (see instructions for \href{http://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html}{Linux},
-#'   \href{http://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html}{Mac OSX}, and
-#'   \href{http://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html}{Windows} operating systems).
+#'   [special license for no cost](https://www.gurobi.com/downloads/end-user-license-agreement-academic/). After installing the
+#'   [Gurobi](https://www.gurobi.com) optimization suite, the \pkg{gurobi}
+#'   package can then be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html),
+#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html), and
+#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html) operating systems).
 #'
-#' @return \code{\link{ProjectProblem-class}} object with the solver added
+#' @return [ProjectProblem-class] object with the solver added
 #'   to it.
 #'
-#' @seealso \code{\link{solvers}}.
+#' @seealso [solvers].
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # load data
 #' data(sim_projects, sim_features, sim_actions)
 #'
@@ -144,7 +141,7 @@ methods::setClass("GurobiSolver", contains = "Solver")
 add_gurobi_solver <- function(x, gap = 0, number_solutions = 1,
                               solution_pool_method = 2,
                               time_limit = .Machine$integer.max,
-                              presolve = 2, threads = 1, first_feasible = 0,
+                              presolve = 2, threads = 1, first_feasible = FALSE,
                               verbose = TRUE) {
   # assert that arguments are valid
   assertthat::assert_that(inherits(x, "ProjectProblem"),
@@ -163,8 +160,7 @@ add_gurobi_solver <- function(x, gap = 0, number_solutions = 1,
                           isTRUE(all(is.finite(threads))),
                           assertthat::is.count(threads),
                           isTRUE(threads <= parallel::detectCores(TRUE)),
-                          assertthat::is.number(first_feasible),
-                          isTRUE(first_feasible == 1 | first_feasible == 0),
+                          assertthat::is.flag(first_feasible),
                           assertthat::is.flag(verbose),
                           requireNamespace("gurobi", quietly = TRUE))
   # add solver
@@ -186,7 +182,7 @@ add_gurobi_solver <- function(x, gap = 0, number_solutions = 1,
                         upper_limit = 2L),
       integer_parameter("threads", threads, lower_limit = 1L,
                         upper_limit = parallel::detectCores(TRUE)),
-      binary_parameter("first_feasible", first_feasible),
+      binary_parameter("first_feasible", as.numeric(first_feasible)),
       binary_parameter("verbose", verbose)),
     solve = function(self, x, ...) {
       # create problem
@@ -216,14 +212,18 @@ add_gurobi_solver <- function(x, gap = 0, number_solutions = 1,
       if (p$SolutionLimit == 0)
         p$SolutionLimit <- NULL
       # solve problem
-      x <- gurobi::gurobi(model = model, params = p)
+      rt <- system.time({
+          x <- withr::with_locale(
+            c(LC_CTYPE = "C"),
+            gurobi::gurobi(model = model, params = p))
+      })[[3]]
       # round binary variables because default precision is 1e-5
       b <- model$vtype == "B"
       if (is.numeric(x$x))
         x$x[b] <- round(x$x[b])
       # extract solution
       out <- list(list(x = x$x, objective = x$objval, status = x$status,
-                       runtime = x$runtime))
+                       runtime = rt))
       # add solutions from solution pool if required
       if (is.numeric(x$x) && isTRUE(length(x$pool) > 1) &&
           isTRUE(self$parameters$get("number_solutions") > 1)) {

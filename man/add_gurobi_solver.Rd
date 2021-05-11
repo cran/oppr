@@ -12,23 +12,20 @@ add_gurobi_solver(
   time_limit = .Machine$integer.max,
   presolve = 2,
   threads = 1,
-  first_feasible = 0,
+  first_feasible = FALSE,
   verbose = TRUE
 )
 }
 \arguments{
-\item{x}{\code{\link{ProjectProblem-class}} object.}
+\item{x}{\linkS4class{ProjectProblem} object.}
 
-\item{gap}{\code{numeric} gap to optimality. This gap is relative when
-solving problems using \pkg{gurobi}, and will cause the optimizer to
-terminate when the difference between the upper and lower objective
-function bounds is less than the gap times the upper bound. For example, a
-value of 0.01 will result in the optimizer stopping when the difference
-between the bounds is 1 percent of the upper bound. For
-other solvers, this is the absolute gap, so if the optimal value for
-a maximization problem is 10, a gap of 0.01 means that a solution between
-10 and 10.01 is required. Defaults to 0, so that optimal solutions will be
-returned.}
+\item{gap}{\code{numeric} gap to optimality. This gap is relative
+and expresses the acceptable deviance from the optimal objective.
+For example, a value of 0.01 will result in the solver stopping when
+it has found a solution within 1\% of optimality.
+Additionally, a value of 0 will result in the solver stopping
+when it has found an optimal solution.
+The default value is 0.1 (i.e. 10\% from optimality).}
 
 \item{number_solutions}{\code{integer} number of solutions desired.
 Defaults to 1. Note that the number of returned solutions can sometimes
@@ -46,7 +43,7 @@ one solution within the optimality gap and a number of additional
 solutions that are of any level of quality (such that the total number of
 solutions is equal to \code{number_solutions}), and \code{2} finding a
 specified number of solutions that are nearest to optimality. For more
-information, see the \emph{Gurobi} manual (i.e. \url{http://www.gurobi.com/documentation/8.0/refman/poolsearchmode.html#parameter:PoolSearchMode}). Defaults to 2.}
+information, see the \emph{Gurobi} manual (i.e. \url{https://www.gurobi.com/documentation/8.0/refman/poolsearchmode.html#parameter:PoolSearchMode}). Defaults to 2.}
 
 \item{time_limit}{\code{numeric} time limit in seconds to run the optimizer.
 The solver will return the current best solution when this time limit is
@@ -73,40 +70,40 @@ Defaults to \code{FALSE}.}
 optimization problems?}
 }
 \value{
-\code{\link{ProjectProblem-class}} object with the solver added
-  to it.
+\linkS4class{ProjectProblem} object with the solver added
+to it.
 }
 \description{
 Specify that the \emph{Gurobi} software should be used to solve a
-project prioritization \code{\link{problem}}. This function can also be
+project prioritization \code{\link[=problem]{problem()}}. This function can also be
 used to customize the behavior of the solver. In addition to the
 \emph{Gurobi} software suite, it also requires the \pkg{gurobi} package to
 be installed.
 }
 \details{
-\href{http://gurobi.com}{\emph{Gurobi}} is a
-  state-of-the-art commercial optimization software with an R package
-  interface. It is by far the fastest of the solvers supported by this
-  package, however, it is also the only solver that is not freely
-  available. That said, licenses are available to academics at no cost. The
-  \pkg{gurobi} package is distributed with the \emph{Gurobi} software suite.
-  This solver uses the \pkg{gurobi} package to solve problems.
+\href{https://www.gurobi.com}{\emph{Gurobi}} is a
+state-of-the-art commercial optimization software with an R package
+interface. It is by far the fastest of the solvers supported by this
+package, however, it is also the only solver that is not freely
+available. That said, licenses are available to academics at no cost. The
+\pkg{gurobi} package is distributed with the \emph{Gurobi} software suite.
+This solver uses the \pkg{gurobi} package to solve problems.
 
-  To install the \pkg{gurobi} package, the
-  \href{https://www.gurobi.com}{Gurobi} optimization suite will first need to
-  be installed (see instructions for \href{http://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html}{Linux},
-  \href{http://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html}{Mac OSX}, and
-  \href{http://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html}{Windows} operating systems). Although
-  \href{https://www.gurobi.com}{Gurobi} is a commercial software, academics
-  can obtain a
-  \href{https://www.gurobi.com/downloads/end-user-license-agreement-academic/}{special license for no cost}. After installing the
-  \href{https://www.gurobi.com}{Gurobi} optimization suite, the \pkg{gurobi}
-  package can then be installed (see instructions for \href{http://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html}{Linux},
-  \href{http://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html}{Mac OSX}, and
-  \href{http://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html}{Windows} operating systems).
+To install the \pkg{gurobi} package, the
+\href{https://www.gurobi.com}{Gurobi} optimization suite will first need to
+be installed (see instructions for \href{https://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html}{Linux},
+\href{https://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html}{Mac OSX}, and
+\href{https://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html}{Windows} operating systems). Although
+\href{https://www.gurobi.com}{Gurobi} is a commercial software, academics
+can obtain a
+\href{https://www.gurobi.com/downloads/end-user-license-agreement-academic/}{special license for no cost}. After installing the
+\href{https://www.gurobi.com}{Gurobi} optimization suite, the \pkg{gurobi}
+package can then be installed (see instructions for \href{https://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html}{Linux},
+\href{https://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html}{Mac OSX}, and
+\href{https://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html}{Windows} operating systems).
 }
 \examples{
-\donttest{
+\dontrun{
 # load data
 data(sim_projects, sim_features, sim_actions)
 
@@ -149,5 +146,5 @@ print(s3)
 }
 }
 \seealso{
-\code{\link{solvers}}.
+\link{solvers}.
 }

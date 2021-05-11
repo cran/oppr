@@ -3,30 +3,30 @@ NULL
 
 #' Add a SYMPHONY solver with \pkg{lpsymphony}
 #'
-#' Specify that the \emph{SYMPHONY} software should be used to solve a
-#' project prioritization \code{\link{problem}} using the \pkg{lpsymphony}
+#' Specify that the *SYMPHONY* software should be used to solve a
+#' project prioritization [problem()] using the \pkg{lpsymphony}
 #' package. This function can also be used to customize the behavior of the
 #' solver. It requires the \pkg{lpsymphony} package.
 #'
 #' @inheritParams add_gurobi_solver
 #'
-#' @details \href{https://projects.coin-or.org/SYMPHONY}{\emph{SYMPHONY}} is an
+#' @details [*SYMPHONY*](https://projects.coin-or.org/SYMPHONY) is an
 #'   open-source integer programming solver that is part of the Computational
 #'   Infrastructure for Operations Research (COIN-OR) project, an initiative
 #'   to promote development of open-source tools for operations research (a
 #'   field that includes linear programming). The \pkg{lpsymphony} package is
 #'   distributed through
-#'   \href{https://doi.org/doi:10.18129/B9.bioc.lpsymphony}{Bioconductor}.
+#'   [Bioconductor](https://doi.org/doi:10.18129/B9.bioc.lpsymphony).
 #'   This functionality is provided because the \pkg{lpsymphony} package may
 #'   be easier to install to install on Windows and Mac OSX systems than the
 #'   \pkg{Rsymphony} package.
 #'
 #' @inherit add_gurobi_solver seealso return
 #'
-#' @seealso \code{\link{solvers}}.
+#' @seealso [solvers].
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # load data
 #' data(sim_projects, sim_features, sim_actions)
 #'
@@ -58,8 +58,8 @@ methods::setClass("LpsymphonySolver", contains = "Solver")
 
 #' @rdname add_lsymphony_solver
 #' @export
-add_lpsymphony_solver <- function(x, gap = 0, time_limit = -1,
-                                  first_feasible = 0, verbose = TRUE) {
+add_lpsymphony_solver <- function(x, gap = 0, time_limit = .Machine$integer.max,
+                                  first_feasible = FALSE, verbose = TRUE) {
   # assert that arguments are valid
   assertthat::assert_that(inherits(x, "ProjectProblem"),
                           isTRUE(all(is.finite(gap))),
@@ -69,9 +69,7 @@ add_lpsymphony_solver <- function(x, gap = 0, time_limit = -1,
                           assertthat::is.count(time_limit) || isTRUE(time_limit
                             == -1),
                           assertthat::is.flag(verbose),
-                          assertthat::is.number(first_feasible),
-                          isTRUE(first_feasible == 1 || isTRUE(first_feasible
-                            == 0)),
+                          assertthat::is.flag(first_feasible),
                           requireNamespace("lpsymphony", quietly = TRUE))
   # throw warning about bug in lpsymphony
   if (utils::packageVersion("lpsymphony") <= as.package_version("1.4.1"))
@@ -87,7 +85,7 @@ add_lpsymphony_solver <- function(x, gap = 0, time_limit = -1,
       numeric_parameter("gap", gap, lower_limit = 0),
       integer_parameter("time_limit", time_limit, lower_limit = -1,
                         upper_limit = .Machine$integer.max),
-      binary_parameter("first_feasible", first_feasible),
+      binary_parameter("first_feasible", as.numeric(first_feasible)),
       binary_parameter("verbose", verbose)),
     solve = function(self, x) {
       assertthat::assert_that(identical(x$pwlobj(), list()),
@@ -110,9 +108,9 @@ add_lpsymphony_solver <- function(x, gap = 0, time_limit = -1,
       model$dir <- replace(model$dir, model$dir == "=", "==")
       model$types <- replace(model$types, model$types == "S", "C")
       p$first_feasible <- as.logical(p$first_feasible)
-      start_time <- Sys.time()
-      x <- do.call(lpsymphony::lpsymphony_solve_LP, append(model, p))
-      end_time <- Sys.time()
+      rt <- system.time({
+        x <- do.call(lpsymphony::lpsymphony_solve_LP, append(model, p))
+      })[[3]]
       # convert status from integer code to character description
       x$status <- symphony_status(x$status)
       # manually throw infeasible solution if it contains only zeros,
@@ -126,7 +124,6 @@ add_lpsymphony_solver <- function(x, gap = 0, time_limit = -1,
         return(NULL)
       list(list(x = x$solution, objective = x$objval,
                 status = as.character(x$status),
-                runtime = as.double(end_time - start_time,
-                                    format = "seconds")))
+                runtime = rt))
     }))
 }

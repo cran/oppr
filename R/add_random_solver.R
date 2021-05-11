@@ -12,10 +12,10 @@ NULL
 #'
 #' @details The algorithm used to randomly generate solutions depends on the
 #'  the objective specified for the project prioritization
-#'  \code{\link{problem}}.
+#'  [problem()].
 #'
 #'  For objectives which maximize benefit subject to budgetary constraints
-#'  (e.g. \code{\link{add_max_richness_objective}}):
+#'  (e.g. [add_max_richness_objective()]):
 #'
 #'  \enumerate{
 #'
@@ -34,7 +34,7 @@ NULL
 #'  }
 #'
 #' For objectives which minimize cost subject to biodiversity constraints
-#' (i.e. \code{\link{add_min_set_objective}}:
+#' (i.e. [add_min_set_objective()]:
 #'
 #'  \enumerate{
 #'
@@ -84,7 +84,7 @@ NULL
 #' # solutions, we can find the optimal solution and calculate how different
 #' # each of the random solutions is from optimality
 #'
-#' \donttest{
+#' \dontrun{
 #' # find the optimal objective value using an exact algorithms solver
 #' s2 <- p1 %>%
 #'       add_default_solver() %>%
@@ -149,7 +149,7 @@ add_random_solver <- function(x, number_solutions = 1, verbose = TRUE) {
           self$parameters$get("number_solutions"),
           as.logical(self$parameters$get("verbose")),
           class(x$data$objective)[1])
-      })
+      })[[3]]
       # coerce logical to numeric matrix
       s <- round(s)
       # format solution data
