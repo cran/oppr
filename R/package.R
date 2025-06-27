@@ -28,7 +28,7 @@ NULL
 #'
 #' @section Installation:
 #' To make the most of this package, the \href{https://bioconductor.org/packages/release/bioc/html/ggtree.html}{\pkg{ggtree}} and
-#' \href{https://www.gurobi.com/documentation/8.1/refman/r_api_overview.html}{\pkg{gurobi}} R packages will need to be installed.
+#' \href{http://docs.gurobi.com/projects/optimizer/en/current/reference/r.html}{\pkg{gurobi}} R packages will need to be installed.
 #' Since the \href{https://bioconductor.org/packages/release/bioc/html/ggtree.html}{\pkg{ggtree}} package is exclusively available
 #' at [Bioconductor](https://bioconductor.org)---and is not available on
 #' [The Comprehensive R Archive Network](https://cran.r-project.org/)---please
@@ -37,22 +37,16 @@ NULL
 #' If the installation process fails, please consult the
 #' [package's online documentation](https://bioconductor.org/packages/release/bioc/html/ggtree.html). To install the \pkg{gurobi} package, the
 #' [Gurobi](https://www.gurobi.com) optimization suite will first need to
-#' be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html),
-#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html), and
-#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html) operating systems). Although
+#' be installed (see <https://support.gurobi.com/hc/en-us/articles/4534161999889-How-do-I-install-Gurobi-Optimizer> for instructions). Although
 #' [Gurobi](https://www.gurobi.com) is a commercial software, academics
 #' can obtain a
 #' [special license for no cost](https://www.gurobi.com/downloads/end-user-license-agreement-academic/). After installing the
 #' [Gurobi](https://www.gurobi.com) optimization suite, the \pkg{gurobi}
-#'  package can then be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html),
-#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html), and
-#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html) operating systems).
+#'  package can then be installed (see <https://support.gurobi.com/hc/en-us/articles/14462206790033-How-do-I-install-Gurobi-for-R> for instructions).
 #'
 #' @seealso Please refer to the package vignette for more information and worked
 #'   examples. This can be accessed using the code
 #'   `vignette("oppr")`.
-#'
-#' @name oppr
 #'
 #' @examples
 #' # load data
@@ -94,5 +88,8 @@ NULL
 #' # visualize solution
 #' plot(p, s)
 #' }
+#'
+#' @name oppr
 #' @docType package
-NULL
+#' @aliases oppr-package
+"_PACKAGE"

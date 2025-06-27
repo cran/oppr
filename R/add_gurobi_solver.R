@@ -35,7 +35,7 @@ NULL
 #'   solutions that are of any level of quality (such that the total number of
 #'   solutions is equal to `number_solutions`), and `2` finding a
 #'   specified number of solutions that are nearest to optimality. For more
-#'   information, see the *Gurobi* manual (i.e. <https://www.gurobi.com/documentation/8.0/refman/poolsearchmode.html#parameter:PoolSearchMode>). Defaults to 2.
+#'   information, see the *Gurobi* manual (i.e. <https://docs.gurobi.com/projects/optimizer/en/current/reference/parameters.html#poolsearchmode>). Defaults to 2.
 #'
 #' @param time_limit `numeric` time limit in seconds to run the optimizer.
 #'   The solver will return the current best solution when this time limit is
@@ -71,16 +71,12 @@ NULL
 #'
 #'   To install the \pkg{gurobi} package, the
 #'   [Gurobi](https://www.gurobi.com) optimization suite will first need to
-#'   be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/software_installation_guid.html),
-#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/software_installation_guid.html), and
-#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/software_installation_guid.html) operating systems). Although
+#'   be installed (see <https://support.gurobi.com/hc/en-us/articles/4534161999889-How-do-I-install-Gurobi-Optimizer> for instructions). Although
 #'   [Gurobi](https://www.gurobi.com) is a commercial software, academics
 #'   can obtain a
 #'   [special license for no cost](https://www.gurobi.com/downloads/end-user-license-agreement-academic/). After installing the
 #'   [Gurobi](https://www.gurobi.com) optimization suite, the \pkg{gurobi}
-#'   package can then be installed (see instructions for [Linux](https://www.gurobi.com/documentation/8.1/quickstart_linux/r_installing_the_r_package.html),
-#'   [Mac OSX](https://www.gurobi.com/documentation/8.1/quickstart_mac/r_installing_the_r_package.html), and
-#'   [Windows](https://www.gurobi.com/documentation/8.1/quickstart_windows/r_installing_the_r_package.html) operating systems).
+#'   package can then be installed (see <https://support.gurobi.com/hc/en-us/articles/14462206790033-How-do-I-install-Gurobi-for-R> for instructions).
 #'
 #' @return [ProjectProblem-class] object with the solver added
 #'   to it.

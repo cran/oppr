@@ -14,7 +14,7 @@ NULL
 #'
 #' @inheritParams add_gurobi_solver
 #'
-#' @details [*lp_solve*](http://lpsolve.sourceforge.net/5.5/) is an
+#' @details [*lp_solve*](https://lpsolve.sourceforge.net/5.5/) is an
 #'   open-source integer programming solver.
 #'   Although this solver is the slowest currently supported solver,
 #'   it is also the only exact algorithm solver that can be installed on all
@@ -98,7 +98,7 @@ add_lpsolveapi_solver <- function(x, gap = 0, presolve = FALSE,
         m2 <- Matrix::sparseMatrix(i = seq_len(n_locked),
                                    j = c(locked_in, locked_out),
                                    x = rep(1, n_locked),
-                                   dims = list(n_locked, ncol(m)))
+                                   dims = c(n_locked, ncol(m)))
         m <- rbind(m, m2)
       }
       # prepare inputs
